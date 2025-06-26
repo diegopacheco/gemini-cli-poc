@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -63,6 +62,9 @@ func setupRouter() *gin.Engine {
 }
 
 func TestGetMappings(t *testing.T) {
+	//dropTables()
+	//createTables()
+
 	router := setupRouter()
 
 	w := httptest.NewRecorder()
