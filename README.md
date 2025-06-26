@@ -44,6 +44,8 @@ CONS
 * I asked for a MAP and I got a list of items, not a map
 * The Schema creation was generated embeded into the go code - not ideal.
 * Single monolithic backend in go.
+* I was upset with the lack of map so I dediced to ask sonnet 4.0 using gh co-pilot, I had to provide the map and manually tweak some positions but the result was much better(to be clear this was not genimi-flash-2.5)
+<img src="results/result-sonnet-plus-me.png" width="600" />
 
 ### Related POCs
 
