@@ -1,19 +1,28 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import { vi, describe, it, expect } from 'vitest'
+import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
 import Map from './Map'
 
 vi.mock('axios')
 
+const renderWithRouter = (component) => {
+  return render(
+    <BrowserRouter>
+      {component}
+    </BrowserRouter>
+  )
+}
+
 describe('Map', () => {
   it('renders loading state initially', () => {
-    render(<Map />)
+    renderWithRouter(<Map />)
     expect(screen.getByText(/Loading map data.../i)).toBeInTheDocument()
   })
 
   it('renders error message on API failure', async () => {
     axios.get.mockRejectedValueOnce(new Error('Network Error'))
-    render(<Map />)
+    renderWithRouter(<Map />)
     await waitFor(() => {
       expect(screen.getByText(/Failed to fetch mappings/i)).toBeInTheDocument()
     })
@@ -32,22 +41,22 @@ describe('Map', () => {
     }
     axios.get.mockResolvedValueOnce({ data: mockData })
 
-    render(<Map />)
+    renderWithRouter(<Map />)
 
     await waitFor(() => {
-      
       expect(screen.getByText(/SC/i)).toBeInTheDocument()
-      expect(screen.getByText(/Developer X/i)).toBeInTheDocument()
+      expect(screen.getByText(/States with data: 1/i)).toBeInTheDocument()
+      expect(screen.getByText(/Total people: 1/i)).toBeInTheDocument()
     })
   })
 
   it('renders message when no states are available', async () => {
     axios.get.mockResolvedValueOnce({ data: { states: [] } })
 
-    render(<Map />)
+    renderWithRouter(<Map />)
 
     await waitFor(() => {
-      expect(screen.getByText(/No states or people data available/i)).toBeInTheDocument()
+      expect(screen.getByText(/Click on a state on the map to see information/i)).toBeInTheDocument()
     })
   })
 })
