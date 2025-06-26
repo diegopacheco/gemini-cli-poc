@@ -40,6 +40,7 @@ CONS
 * gemini-2.5-flash is not as good as sonnet 4.0
 * It got stuck for almost 1h to make a frontend test pass - I had to stop and fix it manually
 * It generated bugs on the frontend, I had to fix them manually
+* I asked for a MAP and I got a list of items, not a map
 
 ### Related POCs
 
