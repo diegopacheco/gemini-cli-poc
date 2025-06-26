@@ -11,7 +11,7 @@ function Add() {
   const [loading, setLoading] = useState(false)
 
   const handleAddPerson = () => {
-    if (!personName || !expertise) {
+    if (!personName.trim() || !expertise.trim()) {
       setError('Person name and expertise cannot be empty.')
       return
     }
@@ -24,10 +24,10 @@ function Add() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setError(null) // Clear previous errors at the start
-    setMessage(null) // Clear previous messages at the start
+    setError(null) 
+    setMessage(null)
 
-    if (!stateName) {
+    if (!stateName.trim()) {
       setError('State name cannot be empty.')
       return
     }
@@ -39,7 +39,7 @@ function Add() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/mappings', payload)
+      await axios.post('http://localhost:8080/mappings', payload)
       setMessage('Mapping added successfully!')
       setStateName('')
       setPeople([])
@@ -54,7 +54,7 @@ function Add() {
   return (
     <div>
       <h1>Add State or People</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} role="form">
         <div>
           <label htmlFor="stateName">State Name:</label>
           <input
@@ -62,7 +62,6 @@ function Add() {
             id="stateName"
             value={stateName}
             onChange={(e) => setStateName(e.target.value)}
-            required
           />
         </div>
         

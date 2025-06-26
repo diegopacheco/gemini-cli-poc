@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react'
+import { vi, describe, it, expect } from 'vitest'
 import axios from 'axios'
 import Map from './Map'
 
