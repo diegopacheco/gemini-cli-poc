@@ -2,10 +2,15 @@
 
 gemini-cli-poc: Google Gemini-CLI poc with Gemini code agent on terminal.
 
+Model: Gemini-2.5-flash
+
 ### Results
 
 Gemini-cli in action <br/>
 <img src="results/gemini-stats.png" width="600" />
+
+Gemini-CLI trying to debug tests and fix them <br/>
+<img src="results/gemini-cli-debug.png" width="600" />
 
 ### Related POCs
 

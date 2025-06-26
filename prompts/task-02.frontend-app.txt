@@ -1,0 +1,95 @@
+task 01: Create a frontend app in React(19) using nodejs(24) and vite(latest).
+
+Do not use statement management libraries like Redux or MobX.
+Do not comment the code.
+
+About the UI we should have 3 pages:
+* welcome: this is the first page and just has a welcome message.
+* map: should DRAW the map of brazil and each state name of people should show on the map(get from baackend localhost:8080/mappings).
+* add: where we should be ablle to add people to states or new states.
+
+Make sure you add tests and tests are passing.
+Make sure the frontend code is on the frontend/src/ folder.
+Make sure frontend pages have validations and error handling.
+Make sure frontend is always calling backend on localhost:8080/.
+Make sure frontend running on port 3000.
+
+Please use the following backend endpoints:
+
+To list all states and people:
+GET /mappings where it will retun a json like this:
+{
+    "states:": [
+        {
+            "name": "SC",
+            "people": [
+                {
+                    "id": 1,
+                    "name": "Developer X",
+                    "expertise": "Backend"
+                },
+                {
+                   "id": 2,
+                    "name": "Developer Y",
+                    "expertise": "Frontend"
+                },
+                {
+                    "id": 3,
+                    "name": "Developer Z",
+                    "expertise": "DevOps"
+                }
+            ],
+        },
+        {
+            "name": "NY",
+            "people": [
+                {
+                    "id": 4,
+                    "name": "Developer A",
+                    "expertise": "Backend"
+                },
+                {
+                    "id": 5,
+                    "name": "Developer B",
+                    "expertise": "Frontend"
+                },
+                {
+                    "id": 6,
+                    "name": "Developer C",
+                    "expertise": "DevOps"
+                }
+            ]
+        }
+   ]
+}
+
+To create a new state or person:
+POST /mappings where it will accept a json like this:
+{
+    "name": "TX",
+    "people": [
+        {
+            "id": 7,
+            "name": "Developer D",
+            "expertise": "Backend"
+        },
+        {
+            "id": 8,
+            "name": "Developer E",
+            "expertise": "Frontend"
+        },
+        {
+            "id": 9,
+            "name": "Developer F",
+            "expertise": "DevOps"
+        }
+    ]
+}
+
+Make sure you update docker-compose.yml to include the frontend app and backend app.
+
+------------------------------
+Token usage:
+
+what is here:
+* task 2
