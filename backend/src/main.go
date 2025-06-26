@@ -95,10 +95,10 @@ func createTables() {
 
 func getMappings(c *gin.Context) {
 	rows, err := db.Query(`
-		SELECT s.name, p.id, p.name, p.expertise
+		SELECT s.name, COALESCE(p.id, 0), COALESCE(p.name, ''), COALESCE(p.expertise, '')
 		FROM states s
-		JOIN state_people sp ON s.id = sp.state_id
-		JOIN people p ON sp.people_id = p.id
+		LEFT JOIN state_people sp ON s.id = sp.state_id
+		LEFT JOIN people p ON sp.people_id = p.id
 	`)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
@@ -114,7 +114,13 @@ func getMappings(c *gin.Context) {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
-		statesMap[stateName] = append(statesMap[stateName], Person{ID: personID, Name: personName, Expertise: expertise})
+		if personID > 0 {
+			statesMap[stateName] = append(statesMap[stateName], Person{ID: personID, Name: personName, Expertise: expertise})
+		} else {
+			if _, exists := statesMap[stateName]; !exists {
+				statesMap[stateName] = []Person{}
+			}
+		}
 	}
 
 	var states []State
@@ -156,7 +162,7 @@ func postMappings(c *gin.Context) {
 	}
 
 	for _, person := range newState.People {
-		res, err := tx.Exec("INSERT INTO people (id, name, expertise) VALUES (?, ?, ?)", person.ID, person.Name, person.Expertise)
+		res, err := tx.Exec("INSERT INTO people (name, expertise) VALUES (?, ?)", person.Name, person.Expertise)
 		if err != nil {
 			tx.Rollback()
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
