@@ -1,0 +1,111 @@
+task 01: Create a backend in Go using gin.
+
+Make sure the backend code is on the backend/src/ folder.
+
+Please have the following endpoints:
+
+GET /mappings where it will retun a json like this:
+{
+    "states:": [
+        {
+            "name": "SC",
+            "people": [
+                {
+                    "id": 1,
+                    "name": "Developer X",
+                    "expertise": "Backend"
+                },
+                {
+                   "id": 2,
+                    "name": "Developer Y",
+                    "expertise": "Frontend"
+                },
+                {
+                    "id": 3,
+                    "name": "Developer Z",
+                    "expertise": "DevOps"
+                }
+            ],
+        },
+        {
+            "name": "NY",
+            "people": [
+                {
+                    "id": 4,
+                    "name": "Developer A",
+                    "expertise": "Backend"
+                },
+                {
+                    "id": 5,
+                    "name": "Developer B",
+                    "expertise": "Frontend"
+                },
+                {
+                    "id": 6,
+                    "name": "Developer C",
+                    "expertise": "DevOps"
+                }
+            ]
+        }
+   ]
+}
+
+POST /mappings where it will accept a json like this:
+{
+    "name": "TX",
+    "people": [
+        {
+            "id": 7,
+            "name": "Developer D",
+            "expertise": "Backend"
+        },
+        {
+            "id": 8,
+            "name": "Developer E",
+            "expertise": "Frontend"
+        },
+        {
+            "id": 9,
+            "name": "Developer F",
+            "expertise": "DevOps"
+        }
+    ]
+}
+Make sure you will add the new state and people to the existing list. If the state already exists, it will add the new people to the existing state.
+
+Make sure you create proper tables and models for the data.
+
+We should have the tables:
+- states
+- people
+- state_people
+
+Also proper map the json to the tables.
+
+Make sure the code has tests and NO COMMENTS.
+
+The database should be a mysql database.
+
+------------------------------
+Token usage:
+
+what is here:
+* task 1
+* asked to create 2 curl to test the backend
+
+TOTAL 756,035 tokens
+
+│                                                                                                                                 │
+│  Stats                                                                                                                          │
+│                                                                                                                                 │
+│  Last Turn                                                        Cumulative (2 Turns)                                          │
+│                                                                                                                                 │
+│  Input Tokens                                        412,697      Input Tokens                                        740,509   │
+│  Output Tokens                                         1,296      Output Tokens                                         8,518   │
+│  Thoughts Tokens                                         186      Thoughts Tokens                                       7,008   │
+│  ────────────────────────────────────────────────────────────     ────────────────────────────────────────────────────────────  │
+│  Total Tokens                                        414,179      Total Tokens                                        756,035   │
+│                                                                                                                                 │
+│  Turn Duration (API)                                   43.4s      Total duration (API)                                 3m 16s   │
+│                                                                   Total duration (wall)                                7m 48s   │
+│                                                                                                                                
