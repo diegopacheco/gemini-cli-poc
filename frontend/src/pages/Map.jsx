@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Header from '../components/Header'
 
 function Map() {
   const [mappings, setMappings] = useState([])
@@ -23,16 +24,24 @@ function Map() {
   }, [])
 
   if (loading) {
-    return <div>Loading map data...</div>
+    return (
+      <div>
+        <div>Loading map data...</div>
+      </div>
+    )
   }
 
   if (error) {
-    return <div style={{ color: 'red' }}>Error: {error}</div>
+    return (
+      <div>
+        <div style={{ color: 'red' }}>Error: {error}</div>
+      </div>
+    )
   }
 
   return (
     <div>
-      
+      <h1>Brazil Map</h1>
       <p>This is a placeholder for the Brazil map. A real implementation would use an SVG map library.</p>
       <div style={{ border: '1px solid black', width: '80%', height: '400px', margin: '20px auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
         {mappings.length === 0 ? (

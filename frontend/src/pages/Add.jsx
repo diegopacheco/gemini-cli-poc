@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Header from '../components/Header'
 
 function Add() {
   const [stateName, setStateName] = useState('')
@@ -53,7 +54,7 @@ function Add() {
 
   return (
     <div>
-      
+      <h1>Add State or People</h1>
       <form onSubmit={handleSubmit} role="form">
         <div>
           <label htmlFor="stateName">State Name:</label>

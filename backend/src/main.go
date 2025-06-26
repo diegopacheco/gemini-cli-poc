@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -8,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -51,6 +51,7 @@ func main() {
 	createTables()
 
 	router := gin.Default()
+	router.Use(cors.Default())
 	router.GET("/mappings", getMappings)
 	router.POST("/mappings", postMappings)
 	router.Run(":8080")
