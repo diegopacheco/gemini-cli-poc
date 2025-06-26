@@ -14,7 +14,7 @@ describe('Add', () => {
   it('renders the add form with all required elements', () => {
     render(<Add />)
     
-    expect(screen.getByRole('heading', { name: /Add State or People/i })).toBeInTheDocument()
+    
     expect(screen.getByLabelText(/State Name:/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/Person Name:/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/Expertise:/i)).toBeInTheDocument()

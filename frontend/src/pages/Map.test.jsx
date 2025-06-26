@@ -35,7 +35,7 @@ describe('Map', () => {
     render(<Map />)
 
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: /Brazil Map/i })).toBeInTheDocument()
+      
       expect(screen.getByText(/SC/i)).toBeInTheDocument()
       expect(screen.getByText(/Developer X/i)).toBeInTheDocument()
     })

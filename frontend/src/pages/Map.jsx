@@ -32,7 +32,7 @@ function Map() {
 
   return (
     <div>
-      <h1>Brazil Map</h1>
+      
       <p>This is a placeholder for the Brazil map. A real implementation would use an SVG map library.</p>
       <div style={{ border: '1px solid black', width: '80%', height: '400px', margin: '20px auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
         {mappings.length === 0 ? (
