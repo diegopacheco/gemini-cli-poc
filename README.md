@@ -19,7 +19,7 @@ Result APP: Add <br/>
 <img src="results/result-app-o2-add.png" width="600" />
 
 Result APP: Map <br/>
-<img src="results/result-app-o3-mapping.png" width="600" />
+<img src="results/result-app-03-mapping.png" width="600" />
 
 ### Stack
 
