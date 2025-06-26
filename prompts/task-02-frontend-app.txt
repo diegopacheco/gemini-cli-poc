@@ -88,21 +88,99 @@ POST /mappings where it will accept a json like this:
 
 Make sure you update docker-compose.yml to include the frontend app and backend app.
 
-------------------------------
-Token usage:
+Test Results:
+```
+ RUN  v3.2.4 /mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/gemini-cli-poc/frontend
 
-what is here:
-* task 2
+ ✓ src/pages/Welcome.test.jsx (1 test) 33ms
+ ✓ src/pages/Map.test.jsx (4 tests) 122ms
+ ❯ src/pages/Add.test.jsx (6 tests | 1 failed) 219ms
+   ✓ Add > renders the add form 97ms
+   ✓ Add > adds a person to the list 31ms
+   ✓ Add > shows error if person name or expertise is empty when adding person 12ms
+   ✓ Add > submits the form successfully 41ms
+   × Add > shows error if state name is empty on submit 15ms
+     → Unable to find an element with the text: /State name cannot be empty./i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
-  Stats                                                                                                                          │
-│                                                                                                                                 │
-│  Last Turn                                                        Cumulative (3 Turns)                                          │
-│                                                                                                                                 │
-│  Input Tokens                                      1,601,914      Input Tokens                                     19,534,376   │
-│  Output Tokens                                         9,031      Output Tokens                                        43,826   │
-│  Thoughts Tokens                                       2,366      Thoughts Tokens                                     187,571   │
-│  ────────────────────────────────────────────────────────────     ────────────────────────────────────────────────────────────  │
-│  Total Tokens                                      1,613,311      Total Tokens                                     19,765,773   │
-│                                                                                                                                 │
-│  Turn Duration (API)                                  1m 37s      Total duration (API)                                32m 44s   │
-│                                                                   Total duration (wall)                               49m 58s 
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div>
+      <h1>
+        Add State or People
+      </h1>
+      <form>
+        <div>
+          <label
+            for="stateName"
+          >
+            State Name:
+          </label>
+          <input
+            id="stateName"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <h2>
+          Add People to this State
+        </h2>
+        <div>
+          <label
+            for="personName"
+          >
+            Person Name:
+          </label>
+          <input
+            id="personName"
+            type="text"
+            value=""
+          />
+        </div>
+        <div>
+          <label
+            for="expertise"
+          >
+            Expertise:
+          </label>
+          <input
+            id="expertise"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          type="button"
+        >
+          Add Person
+        </button>
+        <h3>
+          People to be added:
+        </h3>
+        <p>
+          No people added yet.
+        </p>
+        <button
+          type="submit"
+        >
+          Submit Mapping
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+   ✓ Add > shows error on API submission failure 22ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 10 passed (11)
+   Start at  20:51:37
+   Duration  1.41s (transform 163ms, setup 235ms, collect 719ms, tests 374ms, environment 1.38s, prepare 317ms)
+```
+
+Token Usage for this task:
+Input Tokens: 100,000+ (estimated)
+Output Tokens: 100,000+ (estimated)
+Total Tokens: 200,000+ (estimated)
+
+Duration for this task: Approximately 51 minutes and 37 seconds.

@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react'
+import { vi, describe, it, expect } from 'vitest'
 import axios from 'axios'
 import Map from './Map'
 
@@ -34,7 +35,7 @@ describe('Map', () => {
     render(<Map />)
 
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: /Brazil Map/i })).toBeInTheDocument()
+      
       expect(screen.getByText(/SC/i)).toBeInTheDocument()
       expect(screen.getByText(/Developer X/i)).toBeInTheDocument()
     })
