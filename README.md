@@ -47,6 +47,8 @@ CONS
 * I was upset with the lack of map so I dediced to ask sonnet 4.0 using gh co-pilot, I had to provide the map and manually tweak some positions but the result was much better(to be clear this was not genimi-flash-2.5)
 <img src="results/result-sonnet-plus-me.png" width="600" />
 
+All PRs are here: https://github.com/diegopacheco/gemini-cli-poc/pulls?q=is%3Apr+is%3Aclosed (Fixes that I did outside of Gemini-CLI was commited dirrectly to main branch)
+
 ### Related POCs
 
 * Anthropic Claude POC https://github.com/diegopacheco/claude-code-poc
