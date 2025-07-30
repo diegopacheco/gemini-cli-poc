@@ -57,3 +57,4 @@ All PRs are here: https://github.com/diegopacheco/gemini-cli-poc/pulls?q=is%3Apr
 * Cursor POC https://github.com/diegopacheco/docker-cleanup
 * Sketch POC: https://github.com/diegopacheco/sketch-dev-poc
 * Augument Code POC: https://github.com/diegopacheco/augmentcode-poc
+* Opencode POC: https://github.com/diegopacheco/opencode-poc
