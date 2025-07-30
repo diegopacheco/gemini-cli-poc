@@ -4,6 +4,8 @@ gemini-cli-poc: Google Gemini-CLI poc with Gemini code agent on terminal.
 
 Model: Gemini-2.5-flash
 
+Built with Gemini Cli: https://github.com/google-gemini/gemini-cli
+
 ### Results
 
 Gemini-cli in action <br/>
