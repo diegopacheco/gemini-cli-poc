@@ -61,3 +61,4 @@ All PRs are here: https://github.com/diegopacheco/gemini-cli-poc/pulls?q=is%3Apr
 * Augument Code POC: https://github.com/diegopacheco/augmentcode-poc
 * Opencode POC: https://github.com/diegopacheco/opencode-poc
 * Cursor Agent POC: https://github.com/diegopacheco/cursor-agent-gpt5-poc
+* AWS Kiro POC: https://github.com/diegopacheco/aws-kiro-poc
